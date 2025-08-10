@@ -31,6 +31,11 @@ def make_statement(statement, decoration):
     print(f"{decoration * 3} {statement} {decoration * 3}")
 
 
+print()
+print("Shape Calculator")
+print()
+
+
 def instructions():
     make_statement("Instructions", "ℹ️")
     print('''
