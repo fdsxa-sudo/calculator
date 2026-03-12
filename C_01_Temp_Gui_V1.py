@@ -6,19 +6,19 @@ class Converter:
     """
     Temperature Converter GUI
     """
+
     def __init__(self, parent):
         self.temp_frame = Frame(padx=10, pady=10)
         self.temp_frame.grid()
 
-
         self.temp_heading = Label(self.temp_frame,
-                                  text="Tempterature Converter",
+                                  text="Temperature Converter",
                                   font=("Arial", "16", "bold")
                                   )
         self.temp_heading.grid(row=0)
 
         instructions = ("Please enter a temperature below and then press "
-                        "one of the buttons to convert it from Centegrade "
+                        "one of the buttons to convert it from Centigrade "
                         "to Fahrenheit.")
         self.temp_instructions = Label(self.temp_frame,
                                        text=instructions,
@@ -31,7 +31,7 @@ class Converter:
                                 )
         self.temp_entry.grid(row=2, padx=10, pady=10)
 
-        error = "Please entrer a number"
+        error = "Please enter a number"
         self.temp_error = Label(self.temp_frame, text=error,
                                 fg="#9C0000")
         self.temp_error.grid(row=3)
@@ -46,3 +46,33 @@ class Converter:
                                         fg="#ffffff",
                                         font=("Arial", "12", "bold"), width=12)
         self.to_celsius_button.grid(row=0, column=0, padx=5, pady=5)
+
+        self.to_fahrenheit_button = Button(self.button_frame,
+                                           text="To Fahrenheit",
+                                           bg="#008000",
+                                           fg="#ffffff",
+                                           font=("Arial", "12", "bold"), width=12)
+        self.to_fahrenheit_button.grid(row=0, column=1, padx=5, pady=5)
+
+        self.help_info_button = Button(self.button_frame,
+                                       text="Help / Info",
+                                       bg="#CC6600",
+                                       fg="#ffffff",
+                                       font=("Arial", "12", "bold"), width=12)
+        self.help_info_button.grid(row=1, column=0, padx=5, pady=5)
+
+        self.history_export_button = Button(self.button_frame,
+                                            text="History / Export",
+                                            bg="#004C99",
+                                            fg="#ffffff",
+                                            font=("Arial", "12", "bold"), width=12)
+        self.history_export_button.grid(row=1, column=1, padx=5, pady=5)
+
+    # main routine
+
+
+if __name__ == "__main__":
+    root = Tk()
+    root.title("Temperature converter")
+    something = Converter(root)
+    root.mainloop()
